@@ -7,6 +7,12 @@ int main() {
     Vector2 position;
     Vector2 velocity;
     Vector2 newPosition;
+    Vector2 newVelocity;
+    Vector2 acceleration;
+    float dt = 0.5f;
+    float ax = 2.0f;
+    float ay = 4.0f;
+    acceleration.y = -9.81f;
 
     position.x = 2;
     position.y = 3;
@@ -14,8 +20,11 @@ int main() {
     velocity.y = 1;
 
     
-    newPosition.x = velocity.x + position.x;
-    newPosition.y = velocity.y + position.x;
+    newPosition.x = velocity.x + position.x * dt;
+    newPosition.y = velocity.y + position.y * dt;
+
+    newVelocity.x = velocity.x + ax * dt;
+    newVelocity.y = velocity.y + ay * dt;
 
 
     // variables assignements
